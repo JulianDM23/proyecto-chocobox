@@ -356,8 +356,10 @@
             <p class="header__description">Los mejores recetas y consejos</p>
             
             <div class="nav-links">
-                <a href="nosotros.html">NOSOTROS</a>
-                <a href="recetas.html">RECETAS</a>
+                <a href="nosotros.php">NOSOTROS</a>
+                <a href="recetas.php">RECETAS</a>
+              <a href="articulos.php" class="ver-mas-btn">ARTICULOS</a>
+
             </div>
         </div>
     </header>

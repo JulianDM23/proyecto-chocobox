@@ -482,29 +482,31 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="barra">
-                <a class="logo" href="usuario.php">
-                    <h1 class="logo__nombre">
-                        Blog<span class="logo__bold">ChocoBox</span>
-                    </h1>
-                </a>
-                <nav class="navegacion">
-                    <a href="ayuda.php" class="navegacion__enlace">Comentarios</a>
-                    <a href="Nosotros.php" class="navegacion__enlace">Nosotros</a>
-                    <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
-                </nav>
-            </div>
-
-            <div class="header__texto fade-in">
-                <h2>Noticias, Recetas e Información sobre Chocolate</h2>
-                <p>
-                    Descubre el fascinante mundo del chocolate con nuestros artículos y recetas exclusivas
-                </p>
-            </div>
+  <header class="header">
+    <div class="container header-content">
+        <div class="barra">
+            <a class="logo" href="usuario.php">
+                <h1 class="logo__nombre">
+                    Blog<span class="logo__bold">ChocoBox</span>
+                </h1>
+            </a>
+            <nav class="navegacion">
+                <a href="ayuda.php" class="navegacion__enlace">Comentarios</a>
+                <a href="Nosotros.php" class="navegacion__enlace">Nosotros</a>
+                <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
+                <a href="datos_curiosos.php" class="navegacion__enlace">Datos Curiosos</a>
+            </nav>
         </div>
-    </header>
+
+        <div class="header__texto fade-in">
+            <h2>Noticias, Recetas e Información sobre Chocolate</h2>
+            <p>
+                Descubre el fascinante mundo del chocolate con nuestros artículos y recetas exclusivas
+            </p>
+        </div>
+    </div>
+</header>
+
 
     <!-- Main Content -->
     <div class="container">
