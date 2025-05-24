@@ -60,6 +60,16 @@
         object-fit: cover;
       }
 
+      .article-video-niños {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+
       .article-content {
         padding: 30px;
         text-align: center;
@@ -242,7 +252,22 @@
               </div>
             </div>
           </article>
-
+          
+          <article>
+            <video class="article-image" autoplay muted loop>
+            <source src="../img/Corazon.mp4" type="video/mp4">
+             Tu navegador no soporta la reproducción de video.
+            </video>
+            <div class="article-content">
+              <h3>¿Por qué a los niños les encanta el chocolate?</h3>
+              <p style="font-size: 15px;">El chocolate es uno de los sabores más apreciados por los niños debido a su dulzura natural y textura suave. Estudios indican que el sabor dulce activa centros de placer en el cerebro, generando una sensación de bienestar. Además, los dulces de chocolate suelen estar asociados con recompensas, celebraciones y momentos felices, lo que refuerza su atractivo desde temprana edad.</p>
+              <div class="article-meta">
+                <span>Por: Autor</span>
+                <span>5 min de lectura</span>
+              </div>
+            </div>
+    </article>
+ 
           <article>
             <img src="../img/dogs-lying-floor.jpg" alt="Artículo 2" class="article-image">
             <div class="article-content">
@@ -254,6 +279,31 @@
               </div>
             </div>
           </article>
+
+        
+<article>
+  <div style="background-color: white; display: flex; justify-content: center; align-items: center; padding: 20px; border-radius: 15px;">
+    <video autoplay muted loop playsinline style="height: 500px; width: auto; border-radius: 10px;">
+      <source src="../img/NiñosChocolate.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+  <div class="article-content">
+    <h3>¿Por qué a los niños les encanta el chocolate?</h3>
+    <p style="font-size: 15px;">
+      El chocolate es uno de los sabores más apreciados por los niños debido a su dulzura natural y textura suave. 
+      Estudios indican que el sabor dulce activa centros de placer en el cerebro, generando una sensación de bienestar. 
+      Además, los dulces de chocolate suelen estar asociados con recompensas, celebraciones y momentos felices, 
+      lo que refuerza su atractivo desde temprana edad.
+    </p>
+    <div class="article-meta">
+      <span>Por: Autor</span>
+      <span>5 min de lectura</span>
+    </div>
+  </div>
+</article>
+
+
 
           <article>
             <img src="../img/TipodChocolates.jpg" alt="Artículo 3" class="article-image">
