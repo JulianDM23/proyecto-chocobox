@@ -218,11 +218,39 @@
       }
 
 
-      .mini-carousel-img {
-  height: 400px;
-  object-fit: cover;
+
+.mini-carousel-video {
+  max-height: 500px;
+  max-width: 100%;
+  width: auto;             /* que respete el ancho original del video */
+  margin: 0 auto;          /* centrar horizontalmente */
+  display: block;
+  object-fit: contain;     /* muestra el video completo sin recortarlo */
   border-radius: 15px;
+  background: #000;        /* fondo negro para videos más pequeños */
 }
+
+.media-carousel-item {
+  max-height: 500px;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 15px;
+  background-color: #000;
+}
+/* 🔽 Flechas del carrusel en negro */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 0L4.79.71 1.5 4l3.29 3.29.71.71L0 4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 0L3.21.71 6.5 4l-3.29 3.29-.71.71L8 4z'/%3E%3C/svg%3E");
+}
+
+
 
     </style>
   </head>
@@ -443,25 +471,30 @@
   <div style="background-color: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <div class="container my-3">
       <h3 style="text-align: center; margin-bottom: 20px;">Galería Especial de Chocolate</h3>
-      <div id="carruselGaleria" class="carousel slide" data-bs-ride="carousel">
+
+<div id="carruselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner rounded-4">
 
-          <!-- Video Chocolatefooter.mp4 -->
+          <!-- Video vertical -->
           <div class="carousel-item active">
-            <video class="d-block w-100 mini-carousel-img" autoplay muted loop playsinline>
+            <video class="d-block mini-carousel-video" autoplay muted loop playsinline>
               <source src="../img/Chocolatefooter.mp4" type="video/mp4">
               Tu navegador no soporta la reproducción de video.
             </video>
           </div>
 
-          <!-- Imagen Creacion.jpg -->
-          <div class="carousel-item">
-            <img src="../img/Creacion.jpg" class="d-block w-100 mini-carousel-img" alt="Creación de Chocolate">
-          </div>
+          <!-- Imagen vertical -->
+        <div class="carousel-item">
+  <img src="../img/Carusel2.jpg" class="d-block media-carousel-item" alt="Creación de Chocolate">
+</div>
 
-          <!-- Imagen contacto.jpg -->
+
+          <!-- Otro video vertical -->
           <div class="carousel-item">
-            <img src="../img/contacto.jpg" class="d-block w-100 mini-carousel-img" alt="Contacto">
+            <video class="d-block mini-carousel-video" autoplay muted loop playsinline>
+              <source src="../img/CristalCarrusel.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
+            </video>
           </div>
 
         </div>
@@ -479,6 +512,9 @@
     </div>
   </div>
 </article>
+
+
+             
  </main>
 
 
@@ -551,10 +587,10 @@
           </a>
           <p style="color: #e2e8f0;">Todos los Derechos Reservados © 2025 - BlogChocoBox</p>
           <nav class="navegacion">
-            <a href="ayuda.php" class="navegacion__enlace">Comentarios</a>
             <a href="nosotros.php" class="navegacion__enlace">Nosotros</a>
+                            <a href="../index.php?action=publicaciones" class="navegacion__enlace">📢 Publicaciones</a> <!-- ✅ Nuevo enlace -->
+
             <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
-            <a href="ayuda.php" class="navegacion__enlace">Ayuda</a>
           </nav>
         </div>
       </div>
