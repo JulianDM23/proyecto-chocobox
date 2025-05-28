@@ -238,6 +238,8 @@
           <nav class="navegacion">
             <a href="nosotros.php" class="navegacion__enlace">Nosotros</a>
             <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
+<a href="../index.php?action=Home_usuario" class="navegacion__enlace">👤 Tu perfil</a>
+
                 <a href="../index.php?action=publicaciones" class="navegacion__enlace">📢 Publicaciones</a> <!-- ✅ Nuevo enlace -->
             <a href="../index.php?action=cerrarSesion">Cerrar sesión</a>
           </nav>
