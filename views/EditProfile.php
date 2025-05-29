@@ -38,49 +38,128 @@ if (isset($_POST['update'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Editar Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        form { max-width: 400px; padding: 20px; background: #f4f4f4; border-radius: 10px; }
-        label { font-weight: bold; display: block; margin-top: 10px; }
-        input { width: 100%; padding: 8px; margin-top: 5px; }
-        button { background-color: #4CAF50; color: white; padding: 10px; margin-top: 10px; border: none; cursor: pointer; width: 100%; }
-        .message { background: #dff0d8; color: #3c763d; padding: 10px; border-radius: 5px; margin-top: 10px; }
-    </style>
+   body {
+    background: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px; /* Tamaño base del texto */
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px 50px;
+    border-radius: 15px;
+    color: #fff;
+    max-width: 650px;
+    width: 90%;
+    margin: auto;
+    margin-top: 70px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    font-size: 16px; /* Tamaño de texto dentro del formulario */
+}
+
+label {
+    color: #ffcc99;
+    font-size: 15px; /* Más sutil para etiquetas */
+    margin-bottom: 4px;
+}
+
+.form-control {
+    font-size: 15px; /* Más compacto */
+    padding: 8px 12px;
+}
+
+.btn-choco {
+    background-color: #d49252;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.btn-choco:hover {
+    background-color: #bb7c41;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffcc99;
+    font-size: 22px; /* Un poco más chico */
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.alert {
+    color: #fff;
+    background-color: #d46a6a;
+    border: none;
+    font-size: 15px;
+}
+
+
+</style>
+
 </head>
 <body>
 
-<h2>Editar Perfil</h2>
+<div class="form-container">
+    <h3 class="form-title"><i class="fas fa-user-edit"></i> Editar Perfil</h3>
 
-<?php if (isset($_SESSION['message'])): ?>
-    <div class="message"><?= htmlspecialchars($_SESSION['message']); unset($_SESSION['message']); ?></div>
-<?php endif; ?>
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="alert alert-info"><?= htmlspecialchars($_SESSION['message']); unset($_SESSION['message']); ?></div>
+    <?php endif; ?>
 
-<form method="POST">
-    <label>Nombre:</label>
-    <input type="text" name="nombre" value="<?= isset($usuario['nombre']) ? htmlspecialchars($usuario['nombre']) : '' ?>" required>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" name="nombre" value="<?= htmlspecialchars($usuario['nombre'] ?? '') ?>" required>
+        </div>
 
-    <label>Apellido:</label>
-    <input type="text" name="apellido" value="<?= isset($usuario['apellido']) ? htmlspecialchars($usuario['apellido']) : '' ?>" required>
+        <div class="mb-3">
+            <label>Apellido:</label>
+            <input type="text" class="form-control" name="apellido" value="<?= htmlspecialchars($usuario['apellido'] ?? '') ?>" required>
+        </div>
 
-    <label>Fecha de Nacimiento:</label>
-    <input type="date" name="fecha_nacimiento" value="<?= isset($usuario['fecha_nacimiento']) ? htmlspecialchars($usuario['fecha_nacimiento']) : '' ?>" required>
+        <div class="mb-3">
+            <label>Fecha de Nacimiento:</label>
+            <input type="date" class="form-control" name="fecha_nacimiento" value="<?= htmlspecialchars($usuario['fecha_nacimiento'] ?? '') ?>" required>
+        </div>
 
-    <label>Email:</label>
-    <input type="email" name="email" value="<?= isset($usuario['email']) ? htmlspecialchars($usuario['email']) : '' ?>" required>
+        <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($usuario['email'] ?? '') ?>" required>
+        </div>
 
-    <label>Nueva Contraseña (Opcional):</label>
-    <input type="password" name="password">
+        <div class="mb-3">
+            <label>Nueva Contraseña (Opcional):</label>
+            <input type="password" class="form-control" name="password">
+        </div>
 
-    <button type="submit" name="update">Actualizar</button>
-</form>
+        <button type="submit" name="update" class="btn btn-choco w-100"><i class="fas fa-save"></i> Actualizar</button>
+    </form>
 
-<a href="index.php?action=Home_usuario">Volver</a>
+    <div class="back-link">
+        <a href="index.php?action=Home_usuario" class="text-decoration-none text-light"><i class="fas fa-arrow-left"></i> Volver</a>
+    </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 </body>
 </html>

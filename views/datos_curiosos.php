@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Curiosos ChocoBox</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
@@ -16,42 +20,25 @@
             --cream: #FAEDCD;
             --white: #FFFFFF;
             --black: #2A2A2A;
-            --gray: #F5F5F5;
-            --text-dark: #333333;
             --text-light: #777777;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
             background-color: var(--cream);
+            color: var(--black);
+            line-height: 1.7;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header - Banner Principal */
         .header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            color: var(--white);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
-            padding: 20px;
         }
 
         .header::before {
@@ -68,257 +55,283 @@
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            width: 100%;
         }
 
         .logo {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            color: var(--white);
-            margin-bottom: 40px;
+            color: white;
+            margin-bottom: 1.5rem;
         }
 
-        .logo__bold {
+        .logo span {
             color: var(--chocolate-light);
         }
 
-        .header__title {
-            font-size: 2.5rem;
+        .header-title {
             font-family: 'Dancing Script', cursive;
-            color: var(--white);
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
-        .header__subtitle {
-            font-size: 1.8rem;
+        .header-subtitle {
+            font-size: 1.5rem;
             color: var(--chocolate-light);
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
             font-weight: 500;
-            letter-spacing: 1px;
         }
 
-        .header__description {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .nav-links a {
-            color: var(--white);
+        .nav-link-custom {
+            color: white;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.1rem;
-            padding: 10px 20px;
+            padding: 0.75rem 1.5rem;
             border: 2px solid var(--chocolate-light);
             border-radius: 30px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: all 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-link-custom:hover {
             background-color: var(--chocolate-light);
             color: var(--chocolate-dark);
-        }
-
-        /* Contenido Principal */
-        .main-content {
-            padding: 80px 0;
-            text-align: center;
         }
 
         .section-title {
             font-family: 'Dancing Script', cursive;
             font-size: 2.5rem;
             color: var(--chocolate-dark);
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
         }
 
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--chocolate-light);
         }
 
-        .article-card {
-            background: var(--white);
+        .card-custom {
+            border: none;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
         }
 
-        .article-card:hover {
+        .card-custom:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
-        .article-image {
-            width: 100%;
-            height: 200px;
+        .card-img-custom {
+            height: 220px;
             object-fit: cover;
+            border-bottom: 4px solid var(--chocolate-light);
         }
 
-        .article-content {
-            padding: 20px;
+        .card-body-custom {
+            padding: 1.5rem;
         }
 
-        .article-title {
-            font-size: 1.3rem;
-            color: var(--chocolate-dark);
-            margin-bottom: 10px;
-        }
-
-        .article-excerpt {
-            color: var(--text-light);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Nuevos estilos para el despliegue de contenido */
-        .read-more {
-            display: inline-block;
-            color: var(--chocolate-medium);
+        .card-title-custom {
+            font-size: 1.5rem;
             font-weight: 600;
-            transition: color 0.3s ease;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .read-more:hover {
             color: var(--chocolate-dark);
+            margin-bottom: 1rem;
         }
 
-        .read-more::after {
-            content: " →";
+        .fun-fact-list {
+            list-style-type: none;
+            padding-left: 0;
         }
 
-        .read-more.active::after {
-            content: " ↑";
+        .fun-fact-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .article-full-content {
-            display: none;
-            padding: 15px 0;
-            border-top: 1px solid rgba(212, 163, 115, 0.3);
-            margin-top: 15px;
-            animation: fadeIn 0.3s ease;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            text-align: left;
+        .fun-fact-list li::before {
+            content: '•';
+            color: var(--chocolate-light);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .highlight-fact {
+            background-color: rgba(212, 163, 115, 0.1);
+            border-left: 3px solid var(--chocolate-light);
+            padding: 0.75rem;
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
         }
 
-        /* Footer */
         .footer {
             background-color: var(--chocolate-dark);
-            color: var(--white);
-            padding: 60px 0 30px;
-            text-align: center;
+            color: white;
+            padding: 3rem 0;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
+        .footer-title {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
             list-style: none;
+            padding-left: 0;
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
             color: var(--chocolate-light);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: var(--white);
+        .social-icon {
+            color: white;
             font-size: 1.5rem;
-            transition: color 0.3s ease;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
         }
 
-        .social-links a:hover {
+        .social-icon:hover {
             color: var(--chocolate-light);
         }
 
         .copyright {
-            margin-top: 30px;
-            padding-top: 30px;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Nuevos estilos añadidos */
+        .hero-btn {
+            font-size: 1.1rem;
+            padding: 0.8rem 2rem;
+            margin: 0.5rem;
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--chocolate-light);
+            color: var(--chocolate-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--chocolate-medium);
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            border: 2px solid var(--chocolate-light);
+            border-radius: 30px;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--chocolate-light);
+            color: var(--chocolate-dark);
+            border-radius: 30px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .stats-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--chocolate-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-label {
+            font-size: 1rem;
+            color: var(--chocolate-medium);
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             .logo {
                 font-size: 2.5rem;
             }
             
-            .header__title {
+            .header-title {
                 font-size: 2rem;
             }
             
-            .header__subtitle {
-                font-size: 1.5rem;
+            .header-subtitle {
+                font-size: 1.2rem;
             }
             
-            .nav-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links a {
-                padding: 8px 15px;
-                font-size: 1rem;
+            .nav-link-custom {
+                display: block;
+                margin: 0.5rem auto;
+                max-width: 200px;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+            
+            .card-img-custom {
+                height: 180px;
+            }
+            
+            .hero-btn {
+                font-size: 1rem;
+                padding: 0.6rem 1.5rem;
             }
         }
 
@@ -327,20 +340,24 @@
                 font-size: 2rem;
             }
             
-            .header__title {
-                font-size: 1.8rem;
+            .header-title {
+                font-size: 1.5rem;
             }
             
-            .header__subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .header__description {
-                font-size: 1rem;
-            }
-
             .section-title {
                 font-size: 1.8rem;
+            }
+            
+            .card-title-custom {
+                font-size: 1.3rem;
+            }
+            
+            .stats-item {
+                padding: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -348,133 +365,382 @@
 <body>
     <!-- Header - Banner Principal -->
     <header class="header">
-        <div class="header-content">
-            <h1 class="logo">Datos curiosos <span class="logo__bold">ChocoBox</span></h1>
-            
-            <p class="header__title">Información</p>
-            <p class="header__subtitle">DATOS CURIOSOS</p>
-            <p class="header__description">Los mejores recetas y consejos</p>
-            
-            <div class="nav-links">
-                <a href="nosotros.php">NOSOTROS</a>
-                <a href="recetas.php">RECETAS</a>
-              <a href="articulos.php" class="ver-mas-btn">ARTICULOS</a>
-
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center header-content">
+                    <h1 class="logo">Datos curiosos <span>ChocoBox</span></h1>
+                    <h2 class="header-title">El mundo del chocolate</h2>
+                    <p class="header-subtitle">DESCUBRE SUS SECRETOS</p>
+                    <p class="lead mb-4">Explora los datos más fascinantes, la historia y los beneficios de este delicioso manjar</p>
+                    
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <a href="#curiosidades" class="btn btn-outline-light btn-lg hero-btn me-2">
+                            <i class="fas fa-star me-2"></i>Curiosidades
+                        </a>
+                        <a href="#historia" class="btn btn-outline-light btn-lg hero-btn me-2">
+                            <i class="fas fa-history me-2"></i>Historia
+                        </a>
+                        <a href="#beneficios" class="btn btn-light btn-lg hero-btn">
+                            <i class="fas fa-heart me-2"></i>Beneficios
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="main-content container">
-        <h2 class="section-title">Descubre nuestro contenido</h2>
-        
-        <div class="articles-grid">
-            <!-- Artículo 1 - Historia del Chocolate -->
-            <article class="article-card">
-                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Historia del chocolate" class="article-image">
-                <div class="article-content">
-                    <h3 class="article-title">La historia del chocolate</h3>
-                    <p class="article-excerpt">Descubre cómo el chocolate se convirtió en uno de los dulces más populares del mundo.</p>
-                    <span class="read-more">Leer más</span>
-                    <div class="article-full-content">
-                        <p>El chocolate tiene sus orígenes en las antiguas culturas mesoamericanas, donde los olmecas (1500-400 a.C.) fueron los primeros en procesar el cacao. Los mayas (600 a.C.) lo consideraban "el alimento de los dioses" y lo usaban en rituales sagrados. Los aztecas (1400 d.C.) creían que el cacao era un regalo del dios Quetzalcóatl y lo usaban como moneda.</p>
-                        <p>Con la llegada de los españoles a América en el siglo XVI, el chocolate fue introducido en Europa, donde se le añadió azúcar y especias, transformándose en la delicia dulce que conocemos hoy.</p>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Artículo 2 - Tipos de Chocolate -->
-            <article class="article-card">
-                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tipos de chocolate" class="article-image">
-                <div class="article-content">
-                    <h3 class="article-title">Tipos de chocolate</h3>
-                    <p class="article-excerpt">Conoce las diferencias entre chocolate negro, con leche, blanco y sus porcentajes.</p>
-                    <span class="read-more">Leer más</span>
-                    <div class="article-full-content">
-                        <p><strong>Chocolate negro:</strong> Contiene entre 70% y 100% de cacao. Es el más puro y saludable, con un sabor intenso y amargo.</p>
-                        <p><strong>Chocolate con leche:</strong> Lleva entre 25% y 40% de cacao, mezclado con leche en polvo y azúcar. Tiene un sabor más dulce y suave.</p>
-                        <p><strong>Chocolate blanco:</strong> No contiene sólidos de cacao, solo manteca de cacao (mínimo 20%), leche y azúcar. Tiene textura cremosa y sabor dulce.</p>
-                        <p><strong>Chocolate ruby:</strong> El más reciente, de color rosado natural, con un sabor afrutado y ligeramente ácido.</p>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Artículo 3 - Beneficios del Chocolate -->
-            <article class="article-card">
-                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beneficios del chocolate" class="article-image">
-                <div class="article-content">
-                    <h3 class="article-title">Beneficios del chocolate</h3>
-                    <p class="article-excerpt">Aprende sobre los sorprendentes beneficios para la salud del chocolate negro.</p>
-                    <span class="read-more">Leer más</span>
-                    <div class="article-full-content">
-                        <p><strong>1. Rico en antioxidantes:</strong> El cacao contiene flavonoides que combaten los radicales libres y retrasan el envejecimiento.</p>
-                        <p><strong>2. Mejora el estado de ánimo:</strong> Estimula la producción de serotonina y endorfinas, generando sensación de bienestar.</p>
-                        <p><strong>3. Beneficia al corazón:</strong> Reduce la presión arterial y mejora la circulación sanguínea.</p>
-                        <p><strong>4. Fuente de minerales:</strong> Contiene hierro, magnesio, cobre, manganeso y potasio.</p>
-                        <p><strong>5. Mejora la función cerebral:</strong> Los flavonoides del cacao mejoran el flujo sanguíneo al cerebro y la función cognitiva.</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Sección de Estadísticas -->
+    <section class="py-5 bg-white">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>ChocoBox</h3>
-                    <p>Descubre el mundo del chocolate con nosotros.</p>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">5000</div>
+                        <div class="stats-label">Años de historia</div>
+                    </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Enlaces</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Recetas</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">7.2</div>
+                        <div class="stats-label">Millones de toneladas/año</div>
+                    </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <p>info@chocobox.com</p>
-                    <p>+1 234 567 890</p>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">300+</div>
+                        <div class="stats-label">Compuestos aromáticos</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">50</div>
+                        <div class="stats-label">Países productores</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="py-5">
+        <!-- Sección Curiosidades -->
+        <section id="curiosidades" class="py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title">Curiosidades del Chocolate</h2>
+                        <p class="lead">Datos fascinantes que probablemente no conocías</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Artículo 1 - Chocolate en el espacio -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">CURIOSIDAD</div>
+                            <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Chocolate en el espacio">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Chocolate Espacial</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Incluido en dietas de astronautas desde los 60s.</li>
+                                    <li>M&M's fue el primer dulce en el espacio (1985).</li>
+                                    <li>Snack oficial de la NASA.</li>
+                                    <li>Se consume en bolsas especiales en gravedad cero.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> Los M&M's espaciales son más resistentes para no deshacerse.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 2 - Chocolate y animales -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">SALUD</div>
+                            <img src="https://images.unsplash.com/photo-1591871937573-3d4bb8a23225?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Chocolate y animales">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Chocolate y Animales</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Tóxico para perros y gatos (teobromina).</li>
+                                    <li>El negro es más peligroso que el con leche.</li>
+                                    <li>El blanco casi no contiene teobromina.</li>
+                                    <li>Primates pueden comerlo sin problemas.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> 50g de chocolate negro pueden ser fatales para un perro pequeño.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 3 - Chocolate más caro -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">LUXE</div>
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Chocolate de lujo">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Chocolates de Lujo</h3>
+                                <ul class="fun-fact-list">
+                                    <li>El "To'ak" ecuatoriano cuesta $260 la barra.</li>
+                                    <li>Chocolates con oro comestible 24K.</li>
+                                    <li>Trufas rellenas de champán Dom Pérignon.</li>
+                                    <li>Tabletas con especias raras como azafrán.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> Una tableta de chocolate del Titanic se vendió por $1,500.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Historia -->
+        <section id="historia" class="py-5 bg-light">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title">Historia del Chocolate</h2>
+                        <p class="lead">Un viaje a través del tiempo</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Artículo 1 - Historia del Chocolate -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">HISTORIA</div>
+                            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Historia del chocolate">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Orígenes del Chocolate</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Los olmecas (1500-400 a.C.) fueron los primeros en procesar el cacao.</li>
+                                    <li>Los mayas lo consideraban "el alimento de los dioses".</li>
+                                    <li>Los aztecas usaban granos de cacao como moneda.</li>
+                                    <li>El chocolate sólido se inventó en 1847.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> Cristóbal Colón fue el primer europeo en encontrar granos de cacao en 1502.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 2 - Evolución del chocolate -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">EVOLUCIÓN</div>
+                            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Evolución del chocolate">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Evolución del Chocolate</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Siglo XVI: Llegada a Europa como bebida aristocrática.</li>
+                                    <li>1828: Van Houten inventa la prensa de cacao.</li>
+                                    <li>1875: Daniel Peter crea el chocolate con leche.</li>
+                                    <li>2017: Presentación del chocolate ruby.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> La primera fábrica de chocolate en EE.UU. abrió en 1765.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 3 - Producción -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">PRODUCCIÓN</div>
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Producción de chocolate">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Producción del Chocolate</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Árbol Theobroma cacao da 30-50 semillas/vaina.</li>
+                                    <li>Proceso: fermentar, secar, tostar, moler.</li>
+                                    <li>Prensado separa manteca de cacao.</li>
+                                    <li>400 semillas = 1 libra de chocolate.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> Un árbol produce solo 2-3 lbs de cacao al año.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Beneficios -->
+        <section id="beneficios" class="py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title">Beneficios del Chocolate</h2>
+                        <p class="lead">Razones saludables para disfrutarlo</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Artículo 1 - Beneficios -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">SALUD</div>
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Beneficios del chocolate">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Beneficios Saludables</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Rico en antioxidantes (más que el té verde).</li>
+                                    <li>Mejora el estado de ánimo (aumenta serotonina).</li>
+                                    <li>Reduce la presión arterial.</li>
+                                    <li>Mejora la función cerebral.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> 30g de chocolate negro al día reducen el estrés.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 2 - Tipos de Chocolate -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">VARIEDADES</div>
+                            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Tipos de chocolate">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Tipos de Chocolate</h3>
+                                <ul class="fun-fact-list">
+                                    <li><strong>Negro:</strong> 70-100% cacao, intenso y saludable.</li>
+                                    <li><strong>Con leche:</strong> 25-40% cacao, más dulce y suave.</li>
+                                    <li><strong>Blanco:</strong> Solo manteca de cacao, sin sólidos.</li>
+                                    <li><strong>Ruby:</strong> Color rosado natural, sabor afrutado.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> El chocolate ruby es el primer nuevo tipo en 80 años.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artículo 3 - Chocolate y deporte -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="category-badge">DEPORTE</div>
+                            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top card-img-custom" alt="Chocolate y deporte">
+                            <div class="card-body card-body-custom">
+                                <h3 class="card-title card-title-custom">Chocolate y Deporte</h3>
+                                <ul class="fun-fact-list">
+                                    <li>Mejora el flujo sanguíneo a los músculos.</li>
+                                    <li>Reduce el estrés oxidativo post-ejercicio.</li>
+                                    <li>Fuente rápida de energía.</li>
+                                    <li>Contiene magnesio para la recuperación.</li>
+                                </ul>
+                                <div class="highlight-fact">
+                                    <strong>Dato curioso:</strong> Los ciclistas que consumen chocolate rinden 17% más.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Testimonios -->
+        <section class="py-5 bg-light">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title">Lo que dicen los expertos</h2>
+                        <p class="lead mb-5">Testimonios de chefs y nutricionistas</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "El chocolate negro de alta calidad es uno de los alimentos más complejos sensorialmente, con más de 600 compuestos aromáticos identificados."
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle me-2" width="40" alt="Chef">
+                                María González, Chef Chocolatier
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Los flavonoides del cacao mejoran la función endotelial y reducen la presión arterial. Recomiendo 20-30g diarios de chocolate con 70%+ cacao."
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="40" alt="Nutricionista">
+                                Dr. Carlos Méndez, Nutricionista
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "El proceso de fermentación del cacao es crucial. Un buen chocolate empieza con granos bien fermentados, que desarrollan los precursores del sabor."
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-2" width="40" alt="Productora">
+                                Luisa Fernández, Productora de Cacao
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="footer-title">ChocoBox</h3>
+                    <p>Descubre el mundo del chocolate con nosotros. Datos curiosos, historia, beneficios y las mejores recetas.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h3 class="footer-title">Enlaces</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.php?action=Home_usuario" class="navegacion__enlace">Tu perfil</a></li>
+                        <li><a href="nosotros.php" class="navegacion__enlace">Nosotros</a></li>
+                        <li><a href="articulos.php" class="ver-mas-btn">Articulos</a></li>
+                         <li><a href="#curiosidades">Curiosidades</a></li>
+                         <li><a href="#historia">Historia</a></li>
+                         <li><a href="#beneficios">Beneficios</a></li>
+                         <li><a href="Recetas.php" class="navegacion__enlace">Nuestras Recetas</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h3 class="footer-title">Contacto</h3>
+                    <p><i class="fas fa-envelope me-2"></i> info@chocobox.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Calle del Cacao 123, Ciudad Chocolate</p>
+                    
+                  
             
-            <p class="copyright">© 2023 ChocoBox. Todos los derechos reservados.</p>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright mt-4">© 2023 ChocoBox. Todos los derechos reservados. | <a href="#" class="text-white">Política de privacidad</a> | <a href="#" class="text-white">Términos de servicio</a></p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const readMoreButtons = document.querySelectorAll('.read-more');
-            
-            readMoreButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Toggle clase 'active' en el botón
-                    this.classList.toggle('active');
-                    
-                    // Encuentra el contenido asociado
-                    const content = this.nextElementSibling;
-                    
-                    // Alterna la visualización del contenido
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                    } else {
-                        content.style.display = 'block';
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
