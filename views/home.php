@@ -93,8 +93,11 @@ if (!isset($_SESSION['usuario'])) {
 
         <a href="./index.php?action=edit_profile">✏️ Editar Perfil</a>
         <a href="./index.php?action=cerrar_sesion_usuario">❌ Cerrar sesión</a>
-        <a href="./views/usuario.php">➡️ Ver página personalizada</a>
+                <a href="https://www.canva.com/design/DAGgDU3JEqs/LB41nyer3XbR8rHgxd1-Fg/edit?utm_content=DAGgDU3JEqs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+">➡️ Manual usuario</a>
 
+
+        <a href="./views/usuario.php">➡️ Ver página personalizada</a>
         <footer>
             <p>&copy; 2025 Chocobox - Panel de Usuario</p>
         </footer>
