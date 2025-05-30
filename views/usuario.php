@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlogChocoBox</title>
     <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/footer.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,8 +18,8 @@
     <link
 
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+      
     <style>
       * {
         margin: 0;
@@ -249,35 +253,124 @@
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 0L3.21.71 6.5 4l-3.29 3.29-.71.71L8 4z'/%3E%3C/svg%3E");
 }
+.nuevo-header {
+  background: url('../img/banner.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
 
+.nuevo-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
 
+.contenido-header {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
+.titulo-principal {
+  font-size: 3.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 10px;
+}
+
+.choco {
+  color: #e0a96d;
+  font-style: italic;
+}
+
+.subtitulo {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.descripcion {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.botones-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.botones-header a {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: 2px solid #e0a96d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botones-header a:hover {
+  background-color: #e0a96d;
+  color: #000;
+}
+.cerrar-sesion {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+}
+
+.cerrar-sesion a {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #e0a96d;
+  color: #000;
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cerrar-sesion a:hover {
+  background-color: #fff;
+  color: #000;
+}
     </style>
   </head>
+
+  
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<header class="nuevo-header">
+  <!-- Cerrar sesión arriba a la derecha -->
+  <div class="cerrar-sesion">
+    <a href="../index.php?action=logout">Cerrar sesión</a>
+  </div>
 
-    <header class="header">
-      <div class="contenedor">
-        <div class="barra">
-          <a class="logo" href="#" onclick="window.location.reload(); return false;">
-            <h1 class="logo_nombre no-margin centrar-texto">Blog<span class="logo_bold">ChocoBox</span></h1>
-          </a>
-          <nav class="navegacion">
-            <a href="nosotros.php" class="navegacion__enlace">Nosotros</a>
-            <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
-<a href="../index.php?action=Home_usuario" class="navegacion__enlace">👤 Tu perfil</a>
+  <!-- Contenido principal centrado -->
+  <div class="contenido-header">
+    <h1 class="titulo-principal">Blog<span class="choco">ChocoBox</span></h1>
+    <h2 class="subtitulo">Blog: Noticias, Recetas e Información</h2>
+    <p class="descripcion">Aprende de los expertos con las mejores recetas y consejos</p>
+    <div class="botones-header">
+      <a href="nosotros.php">Nosotros</a>
+      <a href="Recetas.php">Recetas</a>
+      <a href="../index.php?action=Home_usuario" class="navegacion__enlace">👤 Tu perfil</a>
 
-                <a href="../index.php?action=publicaciones" class="navegacion__enlace">📢 Publicaciones</a> <!-- ✅ Nuevo enlace -->
-            <a href="../index.php?action=cerrarSesion">Cerrar sesión</a>
-          </nav>
-        </div>
-      </div>
-      <div class="header__texto">
-        <h2 class="no-margin">Blog: Noticias, Recetas e Información</h2>
-        <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
-      </div>
-    </header>
+      <a href="../index.php?action=publicaciones">Publicaciones</a>
+    </div>
+  </div>
+</header>
 
     <div class="container">
       <div class="blog-layout">
@@ -365,7 +458,7 @@
 
         </main>
 
-        <!-- Barra Lateral -->
+    <!-- Barra Lateral -->
         <aside class="sidebar">
           <div class="sidebar-widget">
             <h3>Artículos Sugeridos</h3>
@@ -376,7 +469,6 @@
                   <h4>De Bebida Maya a Delicia Mundial</h4>
                   <p>Explora el fascinante viaje del chocolate desde sus orígenes como bebida sagrada maya hasta convertirse en el dulce favorito del mundo moderno.</p>
                 </div>
-                <a href="articulos.php" class="ver-mas-btn">Ver más</a>
               </div>
 
               <div class="suggested-post">
@@ -385,7 +477,6 @@
                   <h4>Los Secretos del Chocolate Negro</h4>
                   <p>Descubre por qué el chocolate negro con más del 70% de cacao es considerado un superalimento y sus beneficios para la salud.</p>
                 </div>
-                <a href="articulos.php" class="ver-mas-btn">Ver más</a>
               </div>
 
               <div class="suggested-post">
@@ -394,13 +485,15 @@
                   <h4>Postres Irresistibles de Chocolate</h4>
                   <p>Aprende a preparar tres postres gourmet de chocolate: trufas artesanales, mousse clásico y brownies premium con nueces.</p>
                 </div>
-                <a href="articulos.php" class="ver-mas-btn">Ver más</a>
               </div>
+              <!-- ✅ Botón "Ver más" agregado -->
+        <div class="ver-mas">
+            <a href="articulos.php" class="btn-ver-mas">🔍 Ver más</a>
+        </div>
             </div>
           </div>
         </aside>
       </div>
-      
       <!-- Banner Separador -->
        
       <div class="banner-separator">
@@ -518,30 +611,30 @@
  </main>
 
 
-        <!-- Categorías Populares -->
+       <!-- Categorías Populares -->
        <aside class="sidebar">
     <div class="sidebar-widget">
         <h3>Datos Curiosos</h3>
         <div class="suggested-posts">
             <div class="suggested-post">
-                <img src="../img/ChocolateNegroBarraLateral.jpg" alt="Chocolate Negro">
+                <img src="../img/istockphoto-503259445-612x612.jpg" alt="Chocolate Negro">
                 <div class="suggested-post-content">
-                    <h4>Chocolate Negro</h4>
-                    <p>23 artículos sobre variedades y beneficios</p>
+                    <h4>El chocolate fue una bebida mucho antes de ser dulce</h4>
+                    <p>Los antiguos pueblos mesoamericanos como los mayas y los aztecas consumían el cacao en forma de bebida amarga y picante, mezclada con especias como chile y sin azúcar. </p>
                 </div>
             </div>
             <div class="suggested-post">
-                <img src="../img/ChocolateLecheBarraLateral.jpg" alt="Chocolate con Leche">
+                <img src="../img/close-up-of-white-chocolate-chunks-royalty-free-image-157582140-1547653961.jpg" alt="Chocolate con Leche">
                 <div class="suggested-post-content">
-                    <h4>Chocolate con Leche</h4>
-                    <p>18 artículos sobre recetas y preparaciones</p>
+                    <h4>El chocolate blanco no es técnicamente chocolate</h4>
+                    <p>A diferencia del chocolate negro o con leche, el chocolate blanco no contiene sólidos de cacao, solo manteca de cacao, leche y azúcar. Por eso muchos puristas no lo consideran "verdadero chocolate".</p>
                 </div>
             </div>
             <div class="suggested-post">
-                <img src="../img/ChocolateBlancoBarraLateral.jpg" alt="Chocolate Blanco">
+                <img src="../img/9082772-pila-de-monedas-chocolate-envuelto-en-estaño-oro-brillante.jpg" alt="Chocolate Blanco">
                 <div class="suggested-post-content">
-                    <h4>Chocolate Blanco</h4>
-                    <p>15 artículos sobre usos y aplicaciones</p>
+                    <h4>Fue usado como moneda</h4>
+                    <p>Los aztecas valoraban tanto el cacao que usaban los granos como moneda. Por ejemplo, un conejo podía costar unos 10 granos de cacao. ¡Literalmente te podías comer tu dinero!</p>
                 </div>
             </div>
         </div>
@@ -574,27 +667,137 @@
         background: #f4a261;
         color: #fff;
     }
+
+    .chocolos-footer {
+            background-color: #2a1a0f;
+            color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 3rem 0;
+            border-top: 4px solid #e0a96d;
+        }
+        
+        .footer-title {
+            color: #e0a96d;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-size: 1.5rem;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 2px;
+            background: #e0a96d;
+        }
+        
+        .footer-description {
+            color: #d1d1d1;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.7rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #d1d1d1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding-left: 0;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #e0a96d;
+            padding-left: 8px;
+        }
+        
+        .contact-info li {
+            color: #d1d1d1;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            color: #e0a96d;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .legal-links a {
+            color: #d1d1d1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .legal-links a:hover {
+            color: #e0a96d;
+        }
+        
+        .footer-divider {
+            border-top: 1px solid rgba(224, 169, 109, 0.2);
+            margin: 2rem 0;
+        }
 </style>
 
       </div>
     </div>
-
+  <!-- Footer -->
     <footer class="footer">
-      <div class="contenedor">
-        <div class="barra">
-          <a class="logo" href="index.html">
-            <h1 class="logo_nombre no-margin centrar-texto">Blog<span class="logo_bold">ChocoBox</span></h1>
-          </a>
-          <p style="color: #e2e8f0;">Todos los Derechos Reservados © 2025 - BlogChocoBox</p>
-          <nav class="navegacion">
-            <a href="nosotros.php" class="navegacion__enlace">Nosotros</a>
-                            <a href="../index.php?action=publicaciones" class="navegacion__enlace">📢 Publicaciones</a> <!-- ✅ Nuevo enlace -->
-
-            <a href="Recetas.php" class="navegacion__enlace">Recetas</a>
-          </nav>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="footer-title">ChocoBox</h3>
+                    <p>Descubre el arte de la cocina con nosotros. Recetas auténticas, técnicas profesionales y secretos culinarios de todo el planeta.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h3 class="footer-title">Categorías</h3>
+                    <ul class="footer-links">
+                       <li><a href="../index.php?action=Home_usuario" class="ver-mas-btn">Tu Perfil</a></li>
+                        <li><a href="nosotros.php" class="ver-mas-btn">Nosotros</a></li>
+                        <li><a href="articulos.php" class="ver-mas-btn">Articulos</a></li>
+                         <li><a href="datos_curiosos"> Datos Curiosos</a></li>
+                        <li><a href="recetas.php">Recetas</a></li>
+                        <li><a href="#tecnicas">Técnicas Culinarias</a></li>
+                        <li><a href="#chefs">Nuestros Chefs</a></li>
+                  
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h3 class="footer-title">Contacto</h3>
+                    <p><i class="fas fa-envelope me-2"></i> info@saboresdelmundo.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +34 912 345 678</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Calle del Sabor 123, Madrid, España</p>
+          
+            
+                <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright mt-4">© 2023 ChocoBox. Todos los derechos reservados. | <a href="#" class="text-white">Política de privacidad</a> | <a href="#" class="text-white">Términos de servicio</a></p>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
+
     <!-- Bootstrap JS + Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
